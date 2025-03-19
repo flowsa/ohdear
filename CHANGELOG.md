@@ -1,8 +1,18 @@
-Ohdear Health Checker Changelog
+# Changelog
+
 All notable changes to this project will be documented in this file.
 
-The format is based on Keep a Changelog and this project adheres to Semantic Versioning.
+## [1.0.0] - 2025-03-20
 
-0.0.1 - 2024-09-04
-Added
-Initial release
+### Added
+- Initial release of the **Oh Dear Health Check plugin** for Craft CMS 5.x.
+- Webhook endpoint to receive health check results.
+- Disk space check functionality, with results provided in JSON format.
+- Health check results can be accessed via the endpoint `/actions/ohdear-health-check/webhook/receive`.
+
+### Fixed
+- Resolved issues with the webhook integration to correctly handle and return the expected JSON format for Oh Dear health checks.
+
+---
+
+*Note: This changelog will be updated for future releases.*
