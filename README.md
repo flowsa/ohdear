@@ -28,10 +28,14 @@ To install the plugin, follow these instructions.
 3. Then, tell Composer to load the plugin:
 
     ```bash
-    composer require flowsa/craft-ohdear-health-check
+    ddev composer require flowsa/craft-ohdear-health-check
     ```
 
-4. In the Control Panel, go to **Settings → Plugins** and click the “Install” button for Oh Dear Health Check.
+4. Install the plugin using the following command:
+   
+    ```bash
+    ddev php craft plugin/install ohdear-health-check
+    ```
 
 ## Oh Dear Health Check Overview
 
