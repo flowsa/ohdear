@@ -23,12 +23,13 @@ class WebhookController extends Controller
         $usedSpace = $totalSpace - $freeSpace;
         $usedPercentage = round(($usedSpace / $totalSpace) * 100, 2);
         $status = ($usedPercentage > 90) ? CheckResult::STATUS_FAILED : CheckResult::STATUS_OK;
+        $usedPercentageResponse = ($usedPercentage > 90) ? "Your disk is almost full ({$usedPercentage}%)" : "Your disk usage is at {$usedPercentage}%";
 
 
         $checkResult = new CheckResult(
             name: 'UsedDiskSpace',
             label: 'Used disk space',
-            notificationMessage: "Your disk is almost full ({$usedPercentage}%)",
+            notificationMessage: $usedPercentageResponse,
             shortSummary: "{$usedPercentage}%",
             status: $status,
             meta: ['used_disk_space_percentage' => $usedPercentage]
