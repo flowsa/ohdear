@@ -20,7 +20,7 @@ To install the plugin, follow these instructions.
     "repositories": {
        "ohdear-health-check": {
           "type": "vcs",
-          "url": "https://github.com/flowsa/ohdear-health-check.git"
+          "url": "https://github.com/flowsa/ohdear.git"
        }
     }
     ```
