@@ -1,6 +1,8 @@
 <?php
 namespace ohdearhealthcheck\ohdearhealthcheck;
 
+use ohdearhealthcheck\ohdearhealthcheck\models\Settings;
+
 use Craft;
 use craft\base\Plugin;
 use craft\events\RegisterUrlRulesEvent;
@@ -9,6 +11,8 @@ use yii\base\Event;
 
 class Ohdearhealthcheck extends Plugin
 {
+    public bool $hasCpSettings = true;
+
     public function init()
     {
         parent::init();
@@ -22,5 +26,18 @@ class Ohdearhealthcheck extends Plugin
         );
 
         Craft::info('Oh Dear Health Check Plugin loaded', __METHOD__);
+    }
+
+    public function settingsHtml(): ?string
+    {
+        return Craft::$app->view->renderTemplate(
+            'ohdear-health-check/settings',
+            ['settings' => $this->getSettings()]
+        );
+    }
+
+    protected function createSettingsModel(): ?\craft\base\Model
+    {
+        return new Settings();
     }
 }

@@ -1,0 +1,10 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    label: "API Key"|t('ohdear-health-check'),
+    instructions: "Enter your Oh Dear API key.",
+    id: "apiKey",
+    name: "apiKey",
+    value: settings.apiKey,
+    required: true
+}) }}
