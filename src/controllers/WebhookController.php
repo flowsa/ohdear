@@ -15,6 +15,19 @@ class WebhookController extends Controller
 
     public function actionReceive(): Response
     {
+        // Get the header from the request
+        $request = Craft::$app->getRequest();
+        $ohdearSecret = $request->getHeaders()->get('oh-dear-health-check-secret');
+
+        // Gets the stored API key from plugin settings.
+        $plugin = Craft::$app->plugins->getPlugin('ohdear-health-check');
+        $storedSecret = $plugin->getSettings()->apiKey ?? null;
+
+        // Verify the secret
+        if ($ohdearSecret !== $storedSecret) {
+            return $this->asJson(['error' => 'Invalid secret key'])->setStatusCode(403);
+        }
+
         $checkResults = new CheckResults(new DateTime());
 
         $directory = '/';
@@ -24,7 +37,6 @@ class WebhookController extends Controller
         $usedPercentage = round(($usedSpace / $totalSpace) * 100, 2);
         $status = ($usedPercentage > 90) ? CheckResult::STATUS_FAILED : CheckResult::STATUS_OK;
         $usedPercentageResponse = ($usedPercentage > 90) ? "Your disk is almost full ({$usedPercentage}%)" : "Your disk usage is at {$usedPercentage}%";
-
 
         $checkResult = new CheckResult(
             name: 'UsedDiskSpace',
