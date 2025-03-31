@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1] - 2025-04-01
+
+### Added
+- Added verification for the `oh-dear-health-check-secret` header.
+
+### Improved
+- Improved API security by validating incoming requests.
+
+### Fixed
+- Minor fixes and optimizations for better performance and reliability.
+
+This update enhances security and ensures a more reliable integration with Oh Dear. 🚀
+
+---
+
 ## [1.0.0] - 2025-03-20
 
 ### Added
