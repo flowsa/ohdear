@@ -3,7 +3,7 @@
     "description": "A Craft CMS plugin that checks the health of your site using the Oh Dear API.",
     "type": "craft-plugin",
     "keywords": [ "craft", "craftcms", "plugin", "ohdear", "health", "check"],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "authors": [
         {
