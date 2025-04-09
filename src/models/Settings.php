@@ -2,11 +2,18 @@
 
 namespace ohdearhealthcheck\ohdearhealthcheck\models;
 
+
 use craft\base\Model;
+use craft\helpers\App;
 
 class Settings extends Model
 {
-    public string $apiKey = '';
+    public string $apiKey = '$OH_DEAR_API_KEY';
+
+    public function getApiKey(): string
+    {
+        return App::parseEnv($this->apiKey);
+    }
 
     public function rules(): array
     {
