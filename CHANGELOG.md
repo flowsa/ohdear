@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2025-04-10
+
+### Added
+- Replaced the `textField` for the **API Key** in the plugin settings with an **autosuggestField**.
+  - The new field now suggests environment variables, improving configuration ease.
+  
+### Improved
+- Enhanced API key validation by checking for empty values and verifying the key more securely.
+  - The plugin now uses `Craft::parseEnv()` to correctly handle the API key from environment variables.
+  
+### Fixed
+- Improved error handling when the secret key is missing or invalid, returning a `403 Forbidden` response with a clear error message.
+
+This update ensures better security and an improved user experience when setting up the API key. 🚀
+
+---
+
 ## [1.0.1] - 2025-04-01
 
 ### Added
