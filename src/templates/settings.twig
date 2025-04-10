@@ -1,10 +1,11 @@
 {% import "_includes/forms" as forms %}
 
-{{ forms.textField({
+{{ forms.autosuggestField({
     label: "API Key"|t('ohdear-health-check'),
     instructions: "Enter your Oh Dear API key.",
     id: "apiKey",
+    suggestEnvVars: true,
     name: "apiKey",
-    value: settings.apiKey,
+    value: settings['apiKey'] ?? null,
     required: true
 }) }}
