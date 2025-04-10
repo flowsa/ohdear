@@ -18,12 +18,11 @@ class WebhookController extends Controller
     {
         $request = Craft::$app->getRequest();
         $ohdearSecret = $request->getHeaders()->get('oh-dear-health-check-secret');
+        $plugin = Craft::$app->plugins->getPlugin('ohdear-health-check');
 
-        // Get secret: .env first, then parsed settings
-        $storedSecret = App::env('OH_DEAR_API_KEY')
-            ?? App::parseEnv($this->getSettings()->apiKey);
+        $storedSecret = Craft::parseEnv($plugin->getSettings()->apiKey);
 
-        if ($ohdearSecret !== $storedSecret) {
+        if (empty($ohdearSecret) || empty($storedSecret) || $ohdearSecret !== $storedSecret) {
             return $this->asJson(['error' => 'Invalid secret key'])->setStatusCode(403);
         }
 
