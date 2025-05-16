@@ -13,9 +13,9 @@
     ],
     "support": {
         "email": "info@flowsa.com",
-        "issues": "https://github.com/flowsa/ohdear-health-check/issues",
-        "source": "https://github.com/flowsa/ohdear-health-check",
-        "docs": "https://github.com/flowsa/ohdear-health-check"
+        "issues": "https://github.com/flowsa/ohdear/issues",
+        "source": "https://github.com/flowsa/ohdear",
+        "docs": "https://github.com/flowsa/ohdear"
       },
     "require": {
         "craftcms/cms": "^5.3.0",
