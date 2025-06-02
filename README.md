@@ -46,7 +46,7 @@ The **Oh Dear Health Check** plugin for Craft CMS integrates with the **Oh Dear 
 Before using the plugin, ensure that you have registered for **Oh Dear** and have access to the API. You'll need to configure the plugin to connect with the API by following these steps:
 
 1. In the **Craft CMS Control Panel**, navigate to **Settings → Plugins** and configure the plugin settings.
-2. Provide the necessary API credentials for Oh Dear to check your site. In Oh Dear, go to **Application Health**, navigate to **Settings**. In **Setttings**, provide a **Health Report URL** of your current site 'https://your-site-url/actions/ohdear-health-check/webhook/receive'. Copy the **Health Report URL** API credentials to your live .env file and save.
+2. Provide the necessary API credentials for Oh Dear to check your site. In Oh Dear, go to **Application Health**, navigate to **Settings**. In **Setttings**, provide a **Health Report URL** of your current site 'https://your-site-url/actions/ohdear-health-check/webhook/receive'. Copy and paste the **Health Report URL** API credentials to your live .env file and save.
 
 ## Using Oh Dear Health Check
 
